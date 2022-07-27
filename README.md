@@ -1,2 +1,3 @@
 # log-dot
-A vscode extension to quickly log
+
+Quickly log something with js in vscode.

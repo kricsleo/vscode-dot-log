@@ -2,7 +2,14 @@
   "name": "log-dot",
 	"displayName": "log-dot",
 	"description": "Quickly log something with js in vscode.",
+	"publisher": "kricsleo",
+	"icon": "public/icon.png",
 	"version": "0.0.1",
+	"keywords": [
+    "console.log",
+    "console",
+		"javascript"
+  ],
 	"engines": {
 		"vscode": "^1.69.0"
 	},
