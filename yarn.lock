@@ -378,6 +378,11 @@ color-name@~1.1.4:
   resolved "https://registry.npmmirror.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
+compile@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmmirror.com/compile/-/compile-0.0.2.tgz#092624df2285234fcd39e80269344afd4db6f952"
+  integrity sha512-q5Ql5vqorGj+Z5RIH4hhjbjTYu9ToomfRjPWjEybJ3eT8dE6cnnmkrxZvsEMiMS55Y9pxRP9AVHUhQyen1A7Yg==
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"

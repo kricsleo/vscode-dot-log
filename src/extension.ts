@@ -8,34 +8,36 @@ const languages = [
 	"typescript",
 	"typescriptreact",
 	"vue"
-]
+];
 
-// match like: log.xxx
-const matchReg = /(^|\s)log.(\S*$)/
+// match like: word?
+const logReg = /\b(\S*)\?/;
 
 class Completion implements vscode.CompletionItemProvider {
 	provideCompletionItems(
 		document: vscode.TextDocument,
 		position: vscode.Position,
 	): vscode.ProviderResult<vscode.CompletionItem[]> {
-		const subline = document.lineAt(position).text.substring(0, position.character)
-		const matched = subline.match(matchReg) || []
+		const linePrefix = document.lineAt(position).text.substring(0, position.character);
+		const matched = linePrefix.match(logReg);
 		if(!matched) {
-			return
+			return;
 		}
-		const replace = matched[0].trim()
-		const keyword = matched[2]
+		const [full, variable] = matched;
+		const replace = `console.log('${variable}', ${variable})`;
 		const completion = new vscode.CompletionItem(
 			replace,
-			vscode.CompletionItemKind.Snippet
-		)
-		completion.insertText = new vscode.SnippetString(`console.log('${keyword}', \${1})`)
+			vscode.CompletionItemKind.Snippet,
+		);
+		completion.label = full;
+		completion.insertText = new vscode.SnippetString(replace);
 		completion.range = new vscode.Range(
-			new vscode.Position(position.line, position.character - replace.length),
-			new vscode.Position(position.line, position.character)
-		)
-		completion.documentation = `console.log('${keyword}', )`
-		return [completion]
+			position.line, 
+			position.character - full.length, 
+			position.line, 
+			position.character
+		);
+		return [completion];
 	}
 }
 
@@ -43,7 +45,9 @@ export function activate(context: vscode.ExtensionContext) {
 	const provider = vscode.languages.registerCompletionItemProvider(
 		languages,
 		new Completion(),
-		'.'
-	)
+		'?'
+	);
 	context.subscriptions.push(provider);
+	vscode.window.showInformationMessage('log.dot message');
+	console.log('log.dot start');
 }
