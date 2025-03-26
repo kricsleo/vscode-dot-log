@@ -48,6 +48,4 @@ export function activate(context: vscode.ExtensionContext) {
 		'?'
 	);
 	context.subscriptions.push(provider);
-	vscode.window.showInformationMessage('log.dot message');
-	console.log('log.dot start');
 }
