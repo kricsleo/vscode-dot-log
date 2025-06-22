@@ -1,24 +1,28 @@
 {
-	"name": "log-dot",
-	"displayName": "log-dot",
-	"description": "Quickly log something with js in vscode.",
+	"name": "vscode-dot-log",
+	"displayName": "Dot Log X",
+	"description": "A VS Code extension to quickly add logs like `console.log(...)` 🔖",
 	"publisher": "kricsleo",
 	"icon": "public/icon.png",
 	"version": "0.0.1",
 	"keywords": [
-		"console.log",
 		"console",
-		"javascript"
+		"log",
+		"javascript",
+		"vscode",
+		"extension"
 	],
 	"engines": {
 		"vscode": "^1.69.0"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kricsleo/log-dot.git"
+		"url": "https://github.com/kricsleo/vscode-dot-log.git"
 	},
 	"categories": [
-		"Other"
+		"Debuggers",
+		"Testing",
+		"Programming Languages"
 	],
 	"activationEvents": [
 		"onLanguage:html",
@@ -33,7 +37,7 @@
 		"build": "tsc -p ./",
 		"pack": "vsce package",
 		"vscode:prepublish": "npm run build",
-		"preview": "npm run build && bun run pack && code --uninstall-extension kricsleo.log-dot && code --install-extension log-dot-0.0.1.vsix"
+		"preview": "npm run build && bun run pack && code --uninstall-extension kricsleo.vscode-dot-log && code --install-extension vscode-dot-log-0.0.1.vsix"
 	},
 	"devDependencies": {
 		"@types/node": "16.x",

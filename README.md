@@ -1,3 +1,3 @@
-# log-dot
+# VS Code Extension - Dot Log
 
-Quickly log something with js in vscode.
+A VS Code extension to quickly add logs like `console.log(...)` 🔖
