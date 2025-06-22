@@ -37,7 +37,7 @@
 	"module": "./dist/index.mjs",
 	"scripts": {
 		"build": "rolldown -c rolldown.config.ts && vsce pack",
-		"release": "bumpp && bun run build && bun run pack && vsce publish",
+		"release": "bumpp && bun run build && vsce publish",
 		"preview": "npm run build && code --uninstall-extension kricsleo.vscode-dot-log && code --install-extension vscode-dot-log-0.0.1.vsix"
 	},
 	"devDependencies": {
