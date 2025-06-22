@@ -53,5 +53,5 @@ export function activate(context: vscode.ExtensionContext) {
 function randomPrefix() {
 	const emojis = '🚀 🔥 ⚡ 🎯 🔍 ⚠️ ❌ ✅ 📝 🎉 💡 🐛 📊 🔧 🌟 📦 🎨 ⏰ 🔒 🌐 💎 🎪 🎭 🎨 🎵 🎲 🎳 🎸 🎺 🏆 🏅 🏃 🏋️ 🐾 🦄 🦋 🌈 🌙 ⭐ 🌺 🌸 🍕 🍔 🍰 🎂 🚗 🚁 🛸 ⚓ 🎪 🎡 🎢'.split(' ');
 	const emoji = emojis[Math.floor(Math.random() * emojis.length)]!;
-	return emoji.repeat(5);
+	return emoji.repeat(3);
 }

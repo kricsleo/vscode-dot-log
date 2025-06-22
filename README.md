@@ -1,3 +1,3 @@
 # VS Code Extension - Dot Log
 
-A VS Code extension to quickly add logs like `console.log(...)` 🔖
+A VS Code extension for quickly logging as `console.log(...)` 🥑🥑🥑
