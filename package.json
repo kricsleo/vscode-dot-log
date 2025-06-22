@@ -4,7 +4,7 @@
 	"description": "A VS Code extension to quickly add logs like `console.log(...)` 🔖",
 	"publisher": "kricsleo",
 	"icon": "public/icon.png",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"packageManager": "pnpm@10.12.1",
 	"engines": {
 		"vscode": "^1.101.0"
