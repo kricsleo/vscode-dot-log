@@ -5,13 +5,7 @@
 	"publisher": "kricsleo",
 	"icon": "public/icon.png",
 	"version": "0.0.1",
-	"keywords": [
-		"console",
-		"log",
-		"javascript",
-		"vscode",
-		"extension"
-	],
+	"packageManager": "pnpm@10.12.1",
 	"engines": {
 		"vscode": "^1.101.0"
 	},
@@ -24,6 +18,13 @@
 		"Testing",
 		"Programming Languages"
 	],
+	"keywords": [
+		"console",
+		"log",
+		"javascript",
+		"vscode",
+		"extension"
+	],
 	"activationEvents": [
 		"onLanguage:html",
 		"onLanguage:javascript",
@@ -32,18 +33,19 @@
 		"onLanguage:typescriptreact",
 		"onLanguage:vue"
 	],
-	"main": "./out/extension.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
 	"scripts": {
-		"build": "tsc -p ./",
-		"pack": "vsce package",
-		"vscode:prepublish": "npm run build",
-		"preview": "npm run build && bun run pack && code --uninstall-extension kricsleo.vscode-dot-log && code --install-extension vscode-dot-log-0.0.1.vsix"
+		"build": "rolldown -c rolldown.config.ts && vsce pack",
+		"release": "bumpp && bun run build && bun run pack && vsce publish",
+		"preview": "npm run build && code --uninstall-extension kricsleo.vscode-dot-log && code --install-extension vscode-dot-log-0.0.1.vsix"
 	},
 	"devDependencies": {
 		"@types/node": "16.x",
 		"@types/vscode": "^1.101.0",
 		"@vscode/vsce": "^3.5.0",
+		"bumpp": "^10.2.0",
+		"rolldown": "1.0.0-beta.19",
 		"typescript": "^5.8.3"
-	},
-	"packageManager": "pnpm@10.12.1"
+	}
 }
