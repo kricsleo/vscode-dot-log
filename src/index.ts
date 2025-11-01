@@ -24,7 +24,7 @@ class Completion implements vscode.CompletionItemProvider {
 			return;
 		}
 		const [full, variable] = matched;
-		const replace = `console.log('${randomPrefix()} ${variable}:', ${variable})`;
+		const replace = `console.log('---------- ${variable}:', ${variable})`;
 		const completion = new vscode.CompletionItem(
 			replace,
 			vscode.CompletionItemKind.Snippet,
@@ -48,10 +48,4 @@ export function activate(context: vscode.ExtensionContext) {
 		'?'
 	);
 	context.subscriptions.push(provider);
-}
-
-function randomPrefix() {
-	const emojis = '🚀 🔥 ⚡ 🎯 🔍 ⚠️ ❌ ✅ 📝 🎉 💡 🐛 📊 🔧 🌟 📦 🎨 ⏰ 🔒 🌐 💎 🎪 🎭 🎨 🎵 🎲 🎳 🎸 🎺 🏆 🏅 🏃 🏋️ 🐾 🦄 🦋 🌈 🌙 ⭐ 🌺 🌸 🍕 🍔 🍰 🎂 🚗 🚁 🛸 ⚓ 🎪 🎡 🎢'.split(' ');
-	const emoji = emojis[Math.floor(Math.random() * emojis.length)]!;
-	return emoji.repeat(3);
 }
